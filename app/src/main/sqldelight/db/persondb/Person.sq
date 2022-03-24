@@ -1,0 +1,17 @@
+CREATE TABLE Person (
+    id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT ,
+    firstName TEXT NOT NULL,
+    secondName TEXT NOT NULL
+);
+
+-- you can create separate file for writing function queries. This is just or simplicity.
+insertPerson: INSERT OR REPLACE INTO Person VALUES (?, ?, ?);
+
+getAllPersons:
+SELECT * FROM Person;
+
+getPersonByName:
+SELECT * FROM Person WHERE firstName = :firstName;
+
+deletePersonById:
+DELETE FROM Person WHERE id = :id;
